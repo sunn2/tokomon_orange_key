@@ -27,7 +27,8 @@ function draw() {
         let d2 = dist(myTokomon.tx, myTokomon.ty, myOrange[i].xpos2, myOrange[i].ypos2);
         if(myOrange[i].c1 && d1 < 45){
           if(keyIsDown(32)){
-            myOrange[i].r1 = 0;            
+            myOrange[i].r1 = 0;
+            myTokomon.s += 0.5;
           }
         }
         if(myOrange[i].c2 && d2 < 45){
@@ -94,11 +95,12 @@ class Tokomon {
     this.tspeed = 10;
     this.tx = 35;
     this.ty = 35;
+    this.s = 50;
   }
 
   display(){
     imageMode(CENTER);
-    image(img, this.tx, this.ty, 70, 70);
+    image(img, this.tx, this.ty, this.s, this.s);
 
   }
 
